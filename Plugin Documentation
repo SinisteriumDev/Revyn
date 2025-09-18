@@ -21,7 +21,7 @@ Section:CreateButton("Print 'Hello World!'", function()
 end)
 
 
-CreateToggle(Toggle Text : string, Default State : false, Function : function)
+CreateToggle(Toggle Text : string, Default State : boolean, Function : function)
 Section:CreateToggle("Speed Walk", false, function(State)
     if State then
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100
