@@ -1,6 +1,12 @@
 Plugin Documentation
 This will be used to create your custom plugins, otherwise no buttons will show up. Examples of each functions will be provided below the function arguments.
 
+[[ FORMAT ]]
+function_name(arguments)
+Example
+
+[[ Documentation ]]
+
 CreateSection(nil)
 local Section = _G.PluginTab:CreateSection()
 
