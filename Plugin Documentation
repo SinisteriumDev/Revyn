@@ -1,0 +1,31 @@
+Plugin Documentation
+This will be used to create your custom plugins, otherwise no buttons will show up. Examples of each functions will be provided below the function arguments.
+
+CreateSection(nil)
+local Section = _G.PluginTab:CreateSection()
+
+
+CreateLabel(Text : string)
+Section:CreateLabel("Revyn")
+
+
+CreateButton(Button Text : string, Function : function)
+Section:CreateButton("Print 'Hello World!'", function()
+    print("Hello World!")
+end)
+
+
+CreateToggle(Toggle Text : string, Default State : false, Function : function)
+Section:CreateToggle("Speed Walk", false, function(State)
+    if State then
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100
+    else
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+    end
+end)
+
+
+CreateInput(Input Text : string, Placeholder Text : string, Function : function)
+Section:CreateInput("Set Speed", "16", function(Input)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = tonumber(Input)
+end)
