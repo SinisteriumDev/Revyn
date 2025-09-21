@@ -8,7 +8,8 @@ Example
 [[ Documentation ]]
 
 CreateSection(nil)
-local Section = _G.PluginTab:CreateSection()
+local Section = _G[Plugin Name]:CreateSection()
+-- Therefore if your plugin file name is 'Documentation.lua' or 'Documentation.txt' you will use _G[Documentation]
 
 
 CreateLabel(Text : string)
