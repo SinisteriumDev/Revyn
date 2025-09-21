@@ -36,3 +36,8 @@ CreateInput(Input Text : string, Placeholder Text : string, Function : function)
 Section:CreateInput("Set Speed", "16", function(Input)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = tonumber(Input)
 end)
+
+CreateKeybind(Keybind Text : string, Default Keybind : Enum.KeyCode, Function :function)
+Section:CreateKeybind("Change Keybind", Enum.KeyCode, function(NewKeybind)
+    OpenMenuKeybind = NewKeybind
+end)
