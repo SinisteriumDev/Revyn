@@ -1,3 +1,5 @@
+<pre>
+```lua
 Plugin Documentation
 This will be used to create your custom plugins, otherwise no buttons will show up. Examples of each functions will be provided below the function arguments.
 
@@ -5,25 +7,38 @@ This will be used to create your custom plugins, otherwise no buttons will show 
 function_name(arguments)
 Example
 
+NOTE: locals are optional, you do not need to declare every use as a local it is used in the documentation to demonstrate how the other functions will work as locals are needed for functions such as :UpdateText() to work.
+
 [[ Documentation ]]
+
+-- Section Documentation
 
 CreateSection(nil)
 local Section = _G[Plugin Name]:CreateSection()
--- Therefore if your plugin file name is 'Documentation.lua' or 'Documentation.txt' you will use _G[Documentation]
+--[[ Therefore if your plugin file name is 'Documentation.lua' or 'Documentation.txt' you will use _G["Documentation"] ]]--
 
+-- Label Documentation
 
 CreateLabel(Text : string)
-Section:CreateLabel("Revyn")
+local RevynLabel = Section:CreateLabel("Revyn")
 
+Label:UpdateText(Text : string)
+RevynLabel:UpdateText("I love Revyn")
+
+-- Button Documentation
 
 CreateButton(Button Text : string, Function : function)
-Section:CreateButton("Print 'Hello World!'", function()
+local PrintButton = Section:CreateButton("Print 'Hello World!'", function()
     print("Hello World!")
 end)
 
+Button:UpdateText(Button Text : String)
+PrintButton:UpdateText("Print 'Hello World!'")
+
+-- Toggle Documentation
 
 CreateToggle(Toggle Text : string, Default State : boolean, Function : function)
-Section:CreateToggle("Speed Walk", false, function(State)
+local SpeedToggle = Section:CreateToggle("Speed Walk", false, function(State)
     if State then
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100
     else
@@ -31,13 +46,47 @@ Section:CreateToggle("Speed Walk", false, function(State)
     end
 end)
 
+Toggle:UpdateText(Toggle Text : string)
+SpeedToggle:UpdateText("Walkspeed")
+
+Toggle:UpdateState(Toggle State : boolean)
+SpeedToggle:UpdateState(false)
+
+-- Input Documentation
 
 CreateInput(Input Text : string, Placeholder Text : string, Function : function)
-Section:CreateInput("Set Speed", "16", function(Input)
+local SpeedInput = Section:CreateInput("Set Speed", "16", function(Input)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = tonumber(Input)
 end)
 
+Input:UpdateText(Input Text : string)
+SpeedInput:UpdateText("Choose Speed")
+
+-- Dropdown Documentation
+```lua
+CreateDropdown(Dropdown Text : string, Options : table, Function : function)
+local PlayerList = Section:CreateDropdown("Current Players", game:GetService("Players"):GetPlayers(), function(choice)
+    print("Chosen Player: "..choice)
+end)
+```
+
+Dropdown:UpdateText(Dropdown Text : string)
+PlayerList:UpdateText("Print Player Name")
+
+Dropdown:UpdateOptions(Options : table)
+Dropdown:UpdateOptions({"Roblox", "John Doe", "Jane Doe"})
+
+-- Keybind Documentation
+
 CreateKeybind(Keybind Text : string, Default Keybind : Enum.KeyCode, Function :function)
-Section:CreateKeybind("Change Keybind", Enum.KeyCode, function(NewKeybind)
+local ChooseKeybind = Section:CreateKeybind("Change Keybind", Enum.KeyCode, function(NewKeybind)
     OpenMenuKeybind = NewKeybind
 end)
+
+Keybind:UpdateText(Keybind Text : string)
+ChooseKeybind:UpdateText("Toggle Menu Keybind")
+
+Keybind:UpdateKeybind(Keybind : Enum.KeyCode)
+ChooseKeybind:UpdateKeybind(Enum.KeyCode.F)
+```
+</pre>
