@@ -26,17 +26,17 @@ RevynLabel:UpdateText("I love Revyn")
 
 -- Button Documentation
 
-CreateButton(Button Text : string, Function : function)
+CreateButton(Text : string, Function : function)
 local PrintButton = Section:CreateButton("Print 'Hello World!'", function()
     print("Hello World!")
 end)
 
-Button:UpdateText(Button Text : String)
+Button:UpdateText(Text : String)
 PrintButton:UpdateText("Print 'Hello World!'")
 
 -- Toggle Documentation
 
-CreateToggle(Toggle Text : string, Default State : boolean, Function : function)
+CreateToggle(Text : string, DefaultState : boolean, Function : function)
 local SpeedToggle = Section:CreateToggle("Speed Walk", false, function(State)
     if State then
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100
@@ -45,30 +45,30 @@ local SpeedToggle = Section:CreateToggle("Speed Walk", false, function(State)
     end
 end)
 
-Toggle:UpdateText(Toggle Text: string)
+Toggle:UpdateText(Text : string)
 SpeedToggle:UpdateText("Walkspeed")
 
-Toggle:UpdateState(Toggle State : boolean)
+Toggle:UpdateState(State : boolean)
 SpeedToggle:UpdateState(false)
 
 -- Input Documentation
 
-CreateInput(Input Text : string, Placeholder Text : string, Function : function)
+CreateInput(Text : string, PlaceholderText : string, Function : function)
 local SpeedInput = Section:CreateInput("Set Speed", "16", function(Input)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = tonumber(Input)
 end)
 
-Input:UpdateText(Input Text : string)
+Input:UpdateText(Text : string)
 SpeedInput:UpdateText("Choose Speed")
 
 -- Dropdown Documentation
 
-CreateDropdown(Dropdown Text: string, Options : table, Function : function)
+CreateDropdown(Text : string, Options : table, Function : function)
 local PlayerList = Section:CreateDropdown("Current Players", game:GetService("Players"):GetPlayers(), function(choice)
     print("Chosen Player: "..choice)
 end)
 
-Dropdown:UpdateText(Dropdown Text : string)
+Dropdown:UpdateText(Text : string)
 PlayerList:UpdateText("Print Player Name")
 
 Dropdown:UpdateOptions(Options : table)
@@ -76,12 +76,12 @@ Dropdown:UpdateOptions({"Roblox", "John Doe", "Jane Doe"})
 
 -- Keybind Documentation
 
-CreateKeybind(Keybind Text : string, Default Keybind : Enum.KeyCode, Function :function)
+CreateKeybind(Text : string, DefaultKeybind : Enum.KeyCode, Function : function)
 local ChooseKeybind = Section:CreateKeybind("Change Keybind", Enum.KeyCode, function(NewKeybind)
     OpenMenuKeybind = NewKeybind
 end)
 
-Keybind:UpdateText(Keybind Text : string)
+Keybind:UpdateText(Text : string)
 ChooseKeybind:UpdateText("Toggle Menu Keybind")
 
 Keybind:UpdateKeybind(Keybind : Enum.KeyCode)
