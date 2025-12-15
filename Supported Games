@@ -1,5 +1,5 @@
 local SupportedGames = {
-  [6996253752] = 3,
+  [6996253752] = 1,
   [7603386264] = 3
 }
 return SupportedGames
