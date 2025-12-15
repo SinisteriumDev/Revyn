@@ -1,1 +1,5 @@
-return {6996253752, 7603386264}
+local SupportedGames = {
+  [6996253752] = 3,
+  [7603386264] = 3
+}
+return SupportedGames
