@@ -14,6 +14,11 @@ getexecutorname()
 -- Information: Returns the name of the current executor as a string
 -- Alias: identifyexecutor
 
+findfunction(Name, ReturnFirst)
+-- Usage Example:
+local FirstChatFunction = findfunction("Chat", true)
+local AllChatFunctions = findfunction("Chat", false)
+-- Information: Returns the first match if ReturnFirst is true, otherwise all matches
 
 --------------------------------------------------
 -- Plugin Library
@@ -106,3 +111,32 @@ plugins.removetab(Tab)
 plugins.removetab(ExampleTab)
 -- Information: Removes the tab set by the argument Tab from the interface
 -- Alias: removetab
+
+--------------------------------------------------
+-- Info Library
+--------------------------------------------------
+
+info.getsupportedgames(NamesOnly)
+-- Usage Example:
+for PlaceId, Status in info.getsupportedgames(false) do
+    print("Game with PlaceId "..tostring(PlaceId).." has a status of "..Status)
+end
+for _, GameName in info.getsupportedgames(true) do
+    print(GameName.." is supported by Revyn")
+end
+-- Information: If NamesOnly is false or nil it returns a table of all PlaceId's and Status for each supported game, otherwise just the names of the supported games
+-- Alias: getsupportedgames
+
+
+info.getdiscordlink()
+-- Usage Example:
+print(getdiscordlink())
+-- Information: Returns Revyn's discord invite link
+-- Alias: getdiscordlink
+
+
+info.getstorelink()
+-- Usage Example:
+print(getstorelink())
+-- Information: Returns Revyn's official store link
+-- Alias: getstorelink
