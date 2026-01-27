@@ -1,9 +1,8 @@
 local Supported = {
   ["Cryptic"] = "Supported",
-  ["Delta"] = "Supported",
-  ["Potassium"] = "Supported",
   ["Seliware"] = "Supported",
-  ["Solara"] = "Not Supported",
+  ["Solara"] = "Unsupported",
+  ["Xeno"] = "Unsupported"
 }
 
 return Supported
