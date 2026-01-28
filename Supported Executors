@@ -3,6 +3,7 @@ local Supported = {
   ["Seliware"] = "Supported",
   ["Wave"] = "Supported",
   ["Velocity"] = "Supported",
+  ["Delta"] = "Supported",
   ["Solara"] = "Unsupported",
   ["Xeno"] = "Unsupported"
 }
