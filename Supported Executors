@@ -1,6 +1,7 @@
 local Supported = {
   ["Cryptic"] = "Supported",
   ["Seliware"] = "Supported",
+  ["Wave"] = "Supported",
   ["Solara"] = "Unsupported",
   ["Xeno"] = "Unsupported"
 }
