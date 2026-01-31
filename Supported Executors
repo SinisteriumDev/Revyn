@@ -6,6 +6,7 @@ local Supported = {
   ["Velocity"] = "Supported",
   ["Delta"] = "Supported",
   ["Hydrogen"] = "Supported",
+  ["Volt"] = "Supported",
 
   -- Unsupported
   ["Solara"] = "Unsupported",
