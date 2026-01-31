@@ -1,9 +1,13 @@
 local Supported = {
+  -- Supported
   ["Cryptic"] = "Supported",
   ["Seliware"] = "Supported",
   ["Wave"] = "Supported",
   ["Velocity"] = "Supported",
   ["Delta"] = "Supported",
+  ["Hydrogen"] = "Supported",
+
+  -- Unsupported
   ["Solara"] = "Unsupported",
   ["Xeno"] = "Unsupported"
 }
