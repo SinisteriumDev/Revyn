@@ -12,13 +12,26 @@ Each function includes a usage example for reference.
 
 getexecutorname()
 -- Information: Returns the name of the current executor as a string
--- Alias: identifyexecutor
+
+identifyexecutor()
+-- Information: Returns the name of the current executor and version as a string
 
 findfunction(Name, ReturnFirst)
 -- Usage Example:
 local FirstChatFunction = findfunction("Chat", true)
 local AllChatFunctions = findfunction("Chat", false)
 -- Information: Returns the first match if ReturnFirst is true, otherwise all matches
+
+getinstancepath(Instance)
+-- Usage Example:
+local NewInstance = Instance.new("Part", workspace)
+print(getinstancepath(NewInstance))
+-- Information: Returns the full path of the Instance
+
+genrichtext(Text, RGB, Size, Bold)
+-- Usage Example:
+local RichText = genrichtext("Revyn Documentation", Color3.fromRGB(175, 175, 175), 14, true)
+-- Information: Returns a string in rich text format
 
 --------------------------------------------------
 -- Plugin Library
@@ -113,7 +126,7 @@ plugins.removetab(ExampleTab)
 -- Alias: removetab
 
 --------------------------------------------------
--- Info Library
+-- Information Library
 --------------------------------------------------
 
 info.getsupportedgames(NamesOnly)
@@ -127,6 +140,13 @@ end
 -- Information: If NamesOnly is false or nil it returns a table of all PlaceId's and Status for each supported game, otherwise just the names of the supported games
 -- Alias: getsupportedgames
 
+info.getsupportedexecutors()
+-- Usage Example:
+for _, ExecutorName in info.getsupportedexecutors() do
+    print(ExecutorName.." is confirmed to be supported!")
+end
+-- Information: Returns a table of all supported executor names
+-- Alias: getsupportedexecutors
 
 info.getdiscordlink()
 -- Usage Example:
@@ -140,3 +160,25 @@ info.getstorelink()
 print(getstorelink())
 -- Information: Returns Revyn's official store link
 -- Alias: getstorelink
+
+info.getscriptversion()
+-- Usage Example:
+print(getscriptversion())
+-- Information: Returns the script version being used [Free | Paid]
+-- Alias: getscriptversion
+
+--------------------------------------------------
+-- Connect Library
+--------------------------------------------------
+
+connect.connectui(TextBox, TextButton)
+-- Usage Example:
+connect.connectui(UI.TextBox, UI.TextButton)
+-- Information: Allows you to use rEnv+ on another UI, TextBox being the Script Box and TextButton being the Execute Button
+-- Alias: connectui
+
+connect.applybehaviour(TextBox)
+-- Usage Example:
+connect.applybehaviour(UI.TextBox)
+-- Information: Allows you to use Revyn's Script Box behaviour on another TextBox
+-- Alias: connectui
