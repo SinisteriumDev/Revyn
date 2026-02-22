@@ -3,6 +3,7 @@ local SupportedGames = {
   [133090922033564] = 1, -- Hood Life
   [102500767640476] = 1, -- Miami Streets
   [130700367963690] = 1, -- Philly Streetz 2
-  [82973335539389] = 1 -- Drill City Chicago
+  [82973335539389] = 1, -- Drill City Chicago
+  [114478751418135] = 1 -- South London Remastered
 }
 return SupportedGames
