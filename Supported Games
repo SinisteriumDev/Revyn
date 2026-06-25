@@ -1,4 +1,5 @@
 local SupportedGames = {
+  [537413528] = 1, -- Build a Boat for Treasure
   [126194330110954] = 1, -- Chicago Life
   [133090922033564] = 1, -- Hood Life
   [102500767640476] = 1, -- Miami Streets
